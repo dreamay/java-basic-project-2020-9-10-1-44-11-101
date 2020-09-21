@@ -37,7 +37,7 @@ public class SchemaAnalysis {
                 }
             } else {
                 try {
-                    throw new Exception("Illegal Input");
+                    throw new Exception("Illegal Input.");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
