@@ -1,9 +1,7 @@
 package com.thoughtworks;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class SchemaAnalysis {
@@ -26,8 +24,8 @@ public class SchemaAnalysis {
         return formatSchema;
     }
 
-    public Map<String, Object> analysisSchema(String[] formatSchema) {
-        Map<String, Object> resultMap = new HashMap<>();
+    public List<SchemaRule> analysisSchema(String[] formatSchema) {
+        List<SchemaRule> schemaRules = new ArrayList<>();
         for (int i=1;i< formatSchema.length;i++) {
             String schema = formatSchema[i];
             String[] strings = schema.trim().split(" ");
@@ -35,7 +33,7 @@ public class SchemaAnalysis {
                 String flag = strings[0];
                 if (strings.length == 2) {
                     SchemaRule schemaRule = getSchemaRule(flag, strings[1]);
-                    resultMap.put(flag,schemaRule);
+                    schemaRules.add(schemaRule);
                 }
             } else {
                 try {
@@ -45,7 +43,7 @@ public class SchemaAnalysis {
                 }
             }
         }
-        return resultMap;
+        return schemaRules;
     }
 
     private boolean isInvalidFlag(String str) {
