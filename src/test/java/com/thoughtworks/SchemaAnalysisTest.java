@@ -3,6 +3,8 @@ package com.thoughtworks;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Map;
+
 public class SchemaAnalysisTest {
     @Test
     public void should_return_null_array_when_given_a_schema(){
@@ -25,4 +27,5 @@ public class SchemaAnalysisTest {
         //then
         Assert.assertEquals(3,formatSchema.length);
     }
+
 }
