@@ -11,7 +11,7 @@ import static org.junit.Assert.fail;
 
 public class ArgTest {
     @Test
-    public void l_schema_value_error_test() {
+    public void should_return_value_error_test() {
         //given
         Arg arg = new Arg();
         List<Schema> schemas = new ArrayList<>();
@@ -32,7 +32,7 @@ public class ArgTest {
     }
 
     @Test
-    public void l_schema_repeat_error_test() {
+    public void should_return_repeat_error_test() {
         //given
         Arg arg = new Arg();
         List<Schema> schemas = new ArrayList<Schema>();
